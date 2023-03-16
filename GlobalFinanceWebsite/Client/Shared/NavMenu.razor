@@ -1,0 +1,46 @@
+﻿@inject IManfacService ManfacService
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Global Finance Website</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="dropdown-divider"></li>
+        @foreach (var manfac in ManfacService.Manfacs)
+        {
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="@manfac.Url">
+                    <span class="oi oi-@manfac.Icon" aria-hidden="true"></span> @manfac.Name
+                </NavLink>
+            </li>
+        }
+
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ManfacService.LoadManfacs();
+    }
+}

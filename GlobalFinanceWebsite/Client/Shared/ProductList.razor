@@ -1,0 +1,40 @@
+﻿@inject IProductService ProductService
+@inject IManfacService ManfacService
+@implements IDisposable
+
+<u1 class="list-unstyled">
+    @foreach (var product in  ProductService.Products)
+    {
+        <li class="media my-3">
+            <div class="media-img-wrapper mr-2">
+                <a href="/product/@product.Id">
+                    <img class="media-img" src="@product.Image" alt="@product.Name" />
+                </a>
+            </div>
+            <div class="media-body">
+                <a href="/product/@product.Id">
+                    <h4 class="mb-0">@product.Name @product.Model</h4>
+                </a>
+                <h5 class="price">
+                    $@product.Price
+                </h5>   
+            </div>
+        </li>
+    }
+</u1>
+
+@code {
+    //[Parameter]
+    //public int? ManfacId { get; set; } = null;
+
+    protected override void OnInitialized()
+    {
+        //await ProductService.LoadProducts();
+        ProductService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        ProductService.OnChange -= StateHasChanged;
+    }
+}

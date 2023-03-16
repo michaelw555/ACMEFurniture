@@ -1,0 +1,40 @@
+﻿@page "/"
+@page "/{manfacurl}"
+@inject IManfacService ManfacService;
+@inject IProductService ProductService
+
+@if(manfac != null)
+{
+    <h1>Welcome to the @manfac.Name section</h1>   
+    <ProductList />
+}
+else
+{
+    <h1>Welcome to Global Finance</h1>
+    <ProductList />
+}
+
+<ProductList />
+
+@code
+{
+    [Parameter]
+    public string ManfacUrl { get; set;  }
+
+
+    private Manfac manfac = null;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await ProductService.LoadProducts(ManfacUrl);
+
+        if (ManfacUrl != null)
+        {
+            manfac = ManfacService.Manfacs.FirstOrDefault(m => m.Url.ToLower().Equals(ManfacUrl.ToLower()));
+        }
+        else
+        {
+            manfac = null;
+        }
+    }
+}
