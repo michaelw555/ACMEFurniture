@@ -34,4 +34,5 @@ namespace GlobalFinanceWebsite.Server.Controllers
             return Ok(await _productService.GetProduct(id));
         }
     }
+
 }
