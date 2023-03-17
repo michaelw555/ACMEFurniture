@@ -1,4 +1,5 @@
 ﻿using GlobalFinanceWebsite.Shared;
+using Microsoft.EntityFrameworkCore;
 
 namespace GlobalFinanceWebsite.Server.Services.ProductService
 {
@@ -9,5 +10,9 @@ namespace GlobalFinanceWebsite.Server.Services.ProductService
         Task<List<Product>> GetProductsByManfac(string manfacUrl);
 
         Task<Product> GetProduct(int id);
+        Task AddRequest(Pinfo request);
+
+
+
     }
 }

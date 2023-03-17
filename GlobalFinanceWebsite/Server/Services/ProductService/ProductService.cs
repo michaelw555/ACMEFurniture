@@ -35,6 +35,17 @@ namespace GlobalFinanceWebsite.Server.Services.ProductService
             return _context.Product.Where(p => p.ManfacId == manfac.Id).ToList();
         }
 
-       
+        public ApplicationDbContext Get_context()
+        {
+            return _context;
+        }
+
+        public async Task AddRequest(Pinfo request)
+        {
+            _context.Pinfo.Add(request);
+            await _context.SaveChangesAsync();
+        }
+
+
     }
 }

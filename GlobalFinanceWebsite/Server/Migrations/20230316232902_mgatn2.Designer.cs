@@ -3,6 +3,7 @@ using System;
 using GlobalFinanceWebsite.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GlobalFinanceWebsite.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230316232902_mgatn2")]
+    partial class mgatn2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
@@ -54,39 +57,6 @@ namespace GlobalFinanceWebsite.Server.Migrations
                             Name = "Tesla",
                             Url = "tesla"
                         });
-                });
-
-            modelBuilder.Entity("GlobalFinanceWebsite.Shared.Pinfo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Deposit")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Fname")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Lname")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Months")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Pinfo");
                 });
 
             modelBuilder.Entity("GlobalFinanceWebsite.Shared.Product", b =>
@@ -138,7 +108,7 @@ namespace GlobalFinanceWebsite.Server.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2023, 3, 17, 8, 50, 53, 122, DateTimeKind.Local).AddTicks(3157),
+                            DateCreated = new DateTime(2023, 3, 16, 23, 29, 1, 993, DateTimeKind.Local).AddTicks(8067),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/2010_Toyota_Corolla_CE%2C_Front_Left.jpg/280px-2010_Toyota_Corolla_CE%2C_Front_Left.jpg",
                             IsDeleted = false,
@@ -152,7 +122,7 @@ namespace GlobalFinanceWebsite.Server.Migrations
                         new
                         {
                             Id = 2,
-                            DateCreated = new DateTime(2023, 3, 17, 8, 50, 53, 122, DateTimeKind.Local).AddTicks(3191),
+                            DateCreated = new DateTime(2023, 3, 16, 23, 29, 1, 993, DateTimeKind.Local).AddTicks(8100),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/2021_Tesla_Model_3%2C_front_11.10.21.jpg/280px-2021_Tesla_Model_3%2C_front_11.10.21.jpg",
                             IsDeleted = false,
@@ -166,7 +136,7 @@ namespace GlobalFinanceWebsite.Server.Migrations
                         new
                         {
                             Id = 3,
-                            DateCreated = new DateTime(2023, 3, 17, 8, 50, 53, 122, DateTimeKind.Local).AddTicks(3193),
+                            DateCreated = new DateTime(2023, 3, 16, 23, 29, 1, 993, DateTimeKind.Local).AddTicks(8103),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/2018_Tesla_Model_S_75D.jpg/280px-2018_Tesla_Model_S_75D.jpg",
                             IsDeleted = false,
@@ -180,7 +150,7 @@ namespace GlobalFinanceWebsite.Server.Migrations
                         new
                         {
                             Id = 4,
-                            DateCreated = new DateTime(2023, 3, 17, 8, 50, 53, 122, DateTimeKind.Local).AddTicks(3195),
+                            DateCreated = new DateTime(2023, 3, 16, 23, 29, 1, 993, DateTimeKind.Local).AddTicks(8104),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/2017_Tesla_Model_X_100D_Front.jpg/280px-2017_Tesla_Model_X_100D_Front.jpg",
                             IsDeleted = false,
@@ -194,7 +164,7 @@ namespace GlobalFinanceWebsite.Server.Migrations
                         new
                         {
                             Id = 5,
-                            DateCreated = new DateTime(2023, 3, 17, 8, 50, 53, 122, DateTimeKind.Local).AddTicks(3197),
+                            DateCreated = new DateTime(2023, 3, 16, 23, 29, 1, 993, DateTimeKind.Local).AddTicks(8106),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg/280px-2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg",
                             IsDeleted = false,
@@ -208,7 +178,7 @@ namespace GlobalFinanceWebsite.Server.Migrations
                         new
                         {
                             Id = 6,
-                            DateCreated = new DateTime(2023, 3, 17, 8, 50, 53, 122, DateTimeKind.Local).AddTicks(3198),
+                            DateCreated = new DateTime(2023, 3, 16, 23, 29, 1, 993, DateTimeKind.Local).AddTicks(8108),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/2022_Toyota_Camry_SE_Standard_Package_in_Celestial_Silver_Metallic%2C_Front_Left.jpg/200px-2022_Toyota_Camry_SE_Standard_Package_in_Celestial_Silver_Metallic%2C_Front_Left.jpg",
                             IsDeleted = false,
@@ -222,7 +192,7 @@ namespace GlobalFinanceWebsite.Server.Migrations
                         new
                         {
                             Id = 7,
-                            DateCreated = new DateTime(2023, 3, 17, 8, 50, 53, 122, DateTimeKind.Local).AddTicks(3200),
+                            DateCreated = new DateTime(2023, 3, 16, 23, 29, 1, 993, DateTimeKind.Local).AddTicks(8110),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/2022_Toyota_Camry_Hybrid_XLE_in_Midnight_Black_Metallic%2C_Front_Right%2C_12-25-2021.jpg/200px-2022_Toyota_Camry_Hybrid_XLE_in_Midnight_Black_Metallic%2C_Front_Right%2C_12-25-2021.jpg",
                             IsDeleted = false,
@@ -236,7 +206,7 @@ namespace GlobalFinanceWebsite.Server.Migrations
                         new
                         {
                             Id = 8,
-                            DateCreated = new DateTime(2023, 3, 17, 8, 50, 53, 122, DateTimeKind.Local).AddTicks(3202),
+                            DateCreated = new DateTime(2023, 3, 16, 23, 29, 1, 993, DateTimeKind.Local).AddTicks(8111),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Toyota_Vios_XP150_01_China_2014-04-24_%28cropped%29.jpg/280px-Toyota_Vios_XP150_01_China_2014-04-24_%28cropped%29.jpg",
                             IsDeleted = false,
@@ -250,7 +220,7 @@ namespace GlobalFinanceWebsite.Server.Migrations
                         new
                         {
                             Id = 9,
-                            DateCreated = new DateTime(2023, 3, 17, 8, 50, 53, 122, DateTimeKind.Local).AddTicks(3203),
+                            DateCreated = new DateTime(2023, 3, 16, 23, 29, 1, 993, DateTimeKind.Local).AddTicks(8113),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Toyota_Vios_%28XP150%29_1.5_E_front_%28cropped%29.jpg/190px-Toyota_Vios_%28XP150%29_1.5_E_front_%28cropped%29.jpg",
                             IsDeleted = false,

@@ -33,5 +33,9 @@ namespace GlobalFinanceWebsite.Client.Services.ProductService
         {
             return await _http.GetFromJsonAsync<Product>($"api/Product/{id}");
         }
+        public async Task GetPinfo(Pinfo request)
+        {
+             await _http.PostAsJsonAsync<Pinfo>($"api/Product/request",request );
+        }
     }
 }

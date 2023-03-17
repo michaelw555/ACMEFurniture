@@ -10,12 +10,25 @@
         <h4 class="price">
             $@product.Price
         </h4>
-        <button class="btn btn-primary"><i class"oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Buy now</button>
+        <button class="btn btn-primary" @onclick="NavigateToDealerships"><i class="oi oi-map-marker"></i>&nbsp;&nbsp;&nbsp;Find nearest dealership</button>
+        <button class="btn btn-primary" @onclick="NavigateToFinanceReq"><i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Finance this car</button>
     </div>
 
 </div>
 
 @code {
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+    private void NavigateToDealerships()
+    {
+        NavigationManager.NavigateTo("/Dealerships");
+    }
+    private void NavigateToFinanceReq()
+    {
+        NavigationManager.NavigateTo("/FinanceReq"); 
+    }
+
     private Product product = new Product();
 
     [Parameter]

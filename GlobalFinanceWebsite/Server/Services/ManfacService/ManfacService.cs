@@ -6,8 +6,8 @@ namespace GlobalFinanceWebsite.Server.Services.ManfacService
     {
         public List<Manfac> Manfacs { get; set; } = new List<Manfac>
             {
-                new Manfac {Id = 1, Name = "Toyota", Url = "toyota", Icon = "book" },
-                new Manfac {Id = 2,Name = "Tesla", Url = "tesla", Icon = "aperture" },
+                new Manfac {Id = 1, Name = "Toyota", Url = "toyota", Icon = "chevron-right" },
+                new Manfac {Id = 2,Name = "Tesla", Url = "tesla", Icon = "chevron-right" },
             };
 
         

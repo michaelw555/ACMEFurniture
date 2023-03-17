@@ -8,5 +8,6 @@ namespace GlobalFinanceWebsite.Client.Services.ProductService
         List<Product> Products { get; set; }
         Task LoadProducts(string manfacUrl = null);
         Task<Product> GetProduct(int id);
+        Task GetPinfo(Pinfo request);
     }
 }

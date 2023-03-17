@@ -1,0 +1,47 @@
+﻿@page "/FinanceReq"
+@inject ILocalStorageService LocalStorage
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthStateProvider
+@inject IProductService ProductService
+
+<h3>Finance Request </h3>
+<EditForm Model="pinfo" OnSubmit="HandleFinanceAsync">
+    <div class=" form-group">
+        <label for="fname">First Name</label>
+        <InputText id="fname" @bind-Value="pinfo.Fname" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="lname">Last Name</label>
+        <InputText id="lname" @bind-Value="pinfo.Lname"  class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="address">Address</label>
+        <InputText id="address" @bind-Value="pinfo.Address" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="months">Months loaned for</label>
+        <InputNumber id="months" @bind-Value="pinfo.Months" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="deposit">Deposit amount in $</label>
+        <InputNumber id="deposit" @bind-Value="pinfo.Deposit" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" @onclick= "NavigateToDashboard">Make Finance Request</button>
+</EditForm>
+
+@code {
+    private Pinfo pinfo = new Pinfo();
+
+    private async Task HandleFinanceAsync()
+    {
+        await ProductService.GetPinfo(pinfo);
+    }
+    
+    
+
+    private void NavigateToDashboard()
+    {
+        NavigationManager.NavigateTo("/Dashboard");
+    }
+}

@@ -33,6 +33,12 @@ namespace GlobalFinanceWebsite.Server.Controllers
         {
             return Ok(await _productService.GetProduct(id));
         }
+        [HttpPost("Request")]
+        public async Task<ActionResult> GetAllPinfo(Pinfo request)
+        {
+            await _productService.AddRequest(request);
+            return Ok();
+        }
     }
 
 }

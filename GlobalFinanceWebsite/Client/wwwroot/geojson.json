@@ -1,0 +1,22 @@
+[
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [ -1.464239, 52.376728 ]
+    },
+    "properties": {
+      "name": "Coventry Automobiles"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [ -1.815759, 52.490524 ]
+    },
+    "properties": {
+      "name": "Birmingham Automobiles"
+    }
+  }
+]
